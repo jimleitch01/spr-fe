@@ -2,7 +2,7 @@ node_modules/
 _dist/
 dist/
 typings/
-
+.env
 npm-debug.log
 
 

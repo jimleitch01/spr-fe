@@ -29,7 +29,7 @@ node {
     stage('AzureBuild'){
     withCredentials([azureServicePrincipal('test-rig-demo-jenkins')]) {  
         sh 'az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID'
-        sh 'az acr build --file Dockerfile --subscription  ${SUBSCRIPTION_ID}   --registry ${ACR_NAME} --image ${APP_NAME}:${BRANCH_NAME} .'
+        sh 'cd client ; az acr build --file Dockerfile --subscription  ${SUBSCRIPTION_ID}   --registry ${ACR_NAME} --image ${APP_NAME}:${BRANCH_NAME} .'
     }}
 
     stage('testifiSet1'){

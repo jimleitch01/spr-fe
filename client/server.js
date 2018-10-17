@@ -3,6 +3,8 @@
 
 process.env.NODE_ENV = 'development';
 
+require('dotenv').config();
+
 var path = require('path');
 var chalk = require('chalk');
 var webpack = require('webpack');
@@ -10,6 +12,8 @@ var WebpackDevServer = require('webpack-dev-server');
 var historyApiFallback = require('connect-history-api-fallback');
 var httpProxyMiddleware = require('http-proxy-middleware');
 var config = require('./webpack.config');
+
+console.log(process.env);
 
 // Tools like Cloud9 rely on this.
 var port = process.env.PORT || 3000;
